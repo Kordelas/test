@@ -1,0 +1,430 @@
+@font-face {
+  font-family: "RistrettoPro-Regular";
+  src: url('fonts/font.woff2') format('woff2'), url('fonts/font.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'URW DIN Arabic Cond';
+  src: url('fonts/URWDINArabicCond-Black.woff2') format('woff2'),
+    url('fonts/URWDINArabicCond-Black.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Neusa';
+  src: url('fonts/Neusa-SemiBold.woff2') format('woff2'),
+    url('fonts/Neusa-SemiBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: "Akrobat";
+  src: url("./fonts/Akrobat-Regular.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "Akrobat Bold";
+  src: url("./fonts/Akrobat-Bold.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "Akrobat Light";
+  src: url("./fonts/Akrobat-Light.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "Akrobat Semibold";
+  src: url("./fonts/Akrobat-SemiBold.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "Akrobat Extrabold";
+  src: url("./fonts/Akrobat-ExtraBold.otf") format("truetype");
+}
+
+
+
+/* variables */
+
+:root{
+  --server-colour : rgb(0, 26, 255);
+  --server-colour-low-opacity : rgb(0, 17, 255);
+  --developer-colour : gold;
+  --founder-colour : rgb(0, 110, 255);
+  --coowner-colour : rgb(0, 4, 255);
+}
+
+/* variables */
+
+* {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: "Akrobat Bold";
+}
+
+#body {
+  height: 100vh;
+
+  overflow: hidden;
+  width: 100%;
+  margin: 0;
+}
+
+#myVideo{
+  position: absolute;
+  z-index: -1;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+iframe{
+  position: absolute;
+  filter: hue-rotate(230deg);
+  width: 15vw;
+  height: 7vh;
+  right: 20;
+  transition: ease-in-out 0.5s;
+  bottom: 0; 
+}
+
+iframe:hover{
+  height: 50vh;
+  bottom: 50;
+}
+
+header{
+  height: 33vh;
+}
+
+header .logo{
+  height:100%;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 10vw !important;
+  animation: pulse 2s infinite;
+}
+
+header .info-loading{
+  margin-top: -5vh;
+  height: 5vh;
+  width: 65vw;
+  border-radius: 0.3vw;
+  background: linear-gradient(90deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.2) 100%);
+  line-height: 5vh;
+  font-size: 1vw;
+  color: rgb(255, 255, 255);
+  backdrop-filter: blur(0.5vw);
+}
+
+header .info-loading::before{
+  content: "";
+  position: absolute;
+  border-left: 0.2vw solid var(--server-colour);
+  height: 3vh;
+  margin-top: 0.9vh;
+  filter: drop-shadow(0 0 0.3vw var(--server-colour));
+}
+
+header .info-loading span{
+  margin-left: 0.9vw;
+}
+
+header .info-loading font{
+  color: var(--server-colour);
+  filter: drop-shadow(0 0 0.3vw var(--server-colour));
+}
+
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main{
+  height: 44vh;
+  margin-top: 2vh;
+}
+
+main .card{
+  display: inline-block;
+  vertical-align: bottom;
+  width: 20vw;
+}
+
+main .card:first-child{
+  margin-left: 19vw;
+  height: 120%;
+  top: 0 !important;
+}
+
+main #creators-card{
+  overflow-x:hidden;
+  overflow-y:scroll;
+  background: none !important;
+}
+
+main #creators-card::-webkit-scrollbar{
+  width: 0;
+}
+
+main #creators-card .item{
+  height: 7vh;
+  background: rgba(10,10,10,0.8);
+  border-radius: 0.5vw;
+  padding: 0 1vw;
+  width: 70%;
+  margin-top: 1vh;
+
+  transition: ease-in-out 0.5s;
+}
+
+main #creators-card .item:first-child{
+  margin-top: 0;
+}
+
+main #creators-card .item div{
+  display: inline-block;
+}
+
+main #creators-card .item:hover{
+  cursor: pointer;
+  background: rgba(0,0,0,1);
+}
+
+main #creators-card .item .icon{
+  width: 3vw;
+  height: 5vh;
+  border-radius: 2vw;
+  background: url(https://cdn.discordapp.com/attachments/1135157851296378950/1135158044414726174/Png_9.png    );
+  background-size: 100% 100% !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+
+  position: relative;
+  top: 1vh;
+}
+
+main #creators-card .item .name{
+  font-size: 1.2vw;
+  color: rgb(255, 255, 255);
+  margin-left: 1vw;
+
+  position: relative;
+  top: -1.7vh;
+}
+
+main #creators-card .item .title{
+  display: block;
+  position: relative;
+  left: 4.2vw;
+  top: -1.5vh;
+  color: rgb(0, 38, 255);
+  font-size: 0.8vw;
+  filter: drop-shadow(0 0 0.3vw rgb(255, 255, 255));
+}
+
+main #creators-card .item::before{
+  content: "";
+  position: absolute;
+  border-left: 0.2vw solid var(--server-colour);
+  height: 4vh;
+  margin-top: 1.5vh;
+  filter: drop-shadow(0 0 0.3vw var(--server-colour));
+  margin-left: -1.1vw;
+}
+
+main #creators-card .item#developer::before{
+  border-color: var(--developer-colour);
+  filter: drop-shadow(0 0 0.3vw var(--developer-colour));
+}
+
+main #creators-card .item#founder::before{
+  border-color: var(--founder-colour);
+  filter: drop-shadow(0 0 0.3vw var(--founder-colour));
+}
+
+main #creators-card .item#founder .title{
+  color: var(--founder-colour);
+  filter: drop-shadow(0 0 0.3vw var(--founder-colour));
+}
+
+main #creators-card .item#developer .title{
+  color: var(--developer-colour);
+  filter: drop-shadow(0 0 0.3vw var(--developer-colour));
+}
+
+.audio-player{
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 15vw;
+  background: rgba(10,10,10,0.8);
+  border-radius: 0.5vw; 
+  padding: 1vw;
+}
+
+.audio-player::before{
+  content: "";
+  position: absolute;
+  border-bottom: 0.2vw solid var(--server-colour);
+  width: 40%;
+  margin-top: 5vw;
+  filter: drop-shadow(0 0 0.3vw var(--server-colour));
+  margin-left: 25%;
+}
+
+.audio-player-controls{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.audio-player-controls-btns{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.audio-player-controls-btns button{
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: white;
+  font-size: 0.8vw;
+  border: 1px solid rgba(255,255,255,0.4);
+  padding: 0.4vw;
+  background: var(--server-colour-low-opacity);
+  border-radius: 0.5vw;
+}
+
+.audio-player-controls-volume{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.audio-player-controls-volume-range{
+  -webkit-appearance: none;
+  width: 5vw;
+  height: 0.5vh;
+  background: rgba(255,255,255,0.5);
+  outline: none;
+  border-radius: 0.5vw;
+  margin-left: 0.5vw;
+}
+
+.audio-player-controls-volume-range::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  appearance: none;
+  width: 1vw;
+  height: 1vw;
+  border-radius: 50%;
+  background: var(--server-colour);
+  filter: drop-shadow(0 0 0.3vw var(--server-colour));
+  cursor: pointer;
+}
+
+.audio-player__progress{
+  width: 100%;
+  height: 0.5vh;
+  background: rgba(255,255,255,0.5);
+  border-radius: 0.5vw;
+  margin-top: 1.9vh;
+  transition: height 0.2s;
+}
+
+.audio-player__progress-loaded{
+  width: 20%;
+  height: 100%;
+  background: var(--server-colour);
+  border-radius: 0.5vw;
+  filter: drop-shadow(0 0 0.3vw var(--server-colour));
+}
+
+.audio-player__progress:hover{
+  cursor: pointer;
+  height: 1vh;
+}
+
+.audio-player-controls-volume-range{
+  position: relative;
+  top: -0.5vh;
+}
+
+.fa-volume-up,.fa-volume-mute{
+  color: white;
+  font-size: 1.2vw;
+}
+
+.fa-volume-up:hover,.fa-volume-mute:hover{
+  cursor: pointer;
+}
+
+
+.audio-player__audio{
+  display: none;
+}
+
+.audio-player-controls-btns button{
+  margin-left: 0.2vw;
+  margin-right: 0.2vw;
+  transition: 0.2s;
+}
+
+.audio-player-controls-btns button:hover{
+  background: var(--server-colour);
+  filter: drop-shadow(0 0 0.3vw var(--server-colour));
+}
+
+.card{
+  height: 100%;
+  border-radius: 0.5vw;
+  background: rgba(10,10,10,0.9);
+}
+
+.card .card-title{
+  color: white;
+  font-size: 2vw;
+  font-family: 'Akrobat ExtraBold';
+  margin-left: 2vw;
+  margin-top: 3vh;
+}
+
+.card .card-title::before{
+  content: "";
+  position: absolute;
+  border-left: 0.2vw solid var(--server-colour);
+  height: 4vh;
+  margin-top: 0.4vh;
+  filter: drop-shadow(0 0 0.3vw var(--server-colour));
+  margin-left: -2vw;
+}
+
+.card .info-card{
+  margin-top: 2vh;
+  width: 90%;
+  margin-left: 5%;
+  height: 30vh;
+  font-size: 1.0vw;
+  color: white;
+  font-family: 'Akrobat Bold', sans-serif;
+  line-height: 1.5;
+  
+}
+
+.card:not(:first-child){
+  margin-left: 1vw;
+  position: relative;
+  top: -8vh;
+  backdrop-filter: blur(0.5vw);
+}
+
+.tooltip{
+  color: white;
+}
